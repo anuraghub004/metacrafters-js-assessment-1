@@ -1,0 +1,32 @@
+let volleyballTeam = [];
+
+function mintPlayer(name, position, jerseyNumber, height) {
+  let player = {
+    name: name,
+    position: position,
+    jerseyNumber: jerseyNumber,
+    height: height
+  };
+  volleyballTeam.push(player);
+}
+
+function listPlayers() {
+  for (let i = 0; i < volleyballTeam.length; i++) {
+    console.log("Name: " + volleyballTeam[i].name);
+    console.log("Position: " + volleyballTeam[i].position);
+    console.log("Jersey Number: " + volleyballTeam[i].jerseyNumber);
+    console.log("Height: " + volleyballTeam[i].height);
+    console.log("--------------------");
+  }
+}
+
+function getTotalPlayers() {
+  return volleyballTeam.length;
+}
+
+mintPlayer("Yuji Nishida", "Outside Hitter", 11, "6'1\"");
+mintPlayer("Jenia Grebennikov", "Libero", 8, "6'2\"");
+mintPlayer("Svetoslav Gotsev", "Middle Blocker", 5, "6'9\"");
+mintPlayer("Bruno Mossa de Rezende", "Setter", 1, "6'3\"");
+listPlayers();
+console.log("Total players: " + getTotalPlayers());
