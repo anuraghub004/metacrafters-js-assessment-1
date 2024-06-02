@@ -1,17 +1,38 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of players. What type of variable might this be?
+2. Create an object inside your mintPlayer function that will hold the details for your players. 
+   The details values will be passed to the function as parameters. When the player is ready, 
+   you will store it in the variable you created in step 1.
+3. Your listPlayers() function will print all of your players' details to the console (i.e. console.log("Name: " + player.name)).
+4. For good measure, getTotalPlayers() should return the number of players you have added.
+*/
+
+// Step 1: Create a variable to hold your players
 let volleyballTeam = [];
 
+// Step 2: This function will take in some values as parameters, create a
+// player object using the parameters passed to it for its details, 
+// and store it in the variable above.
 function mintPlayer(name, position, jerseyNumber, height) {
+  // Create a player object with details
   let player = {
     name: name,
     position: position,
     jerseyNumber: jerseyNumber,
     height: height
   };
+  
+  // Store the player in the volleyballTeam array
   volleyballTeam.push(player);
 }
 
+// Step 3: Create a "loop" that will go through an "array" of players
+// and print their details with console.log()
 function listPlayers() {
+  // Iterate through the volleyballTeam array
   for (let i = 0; i < volleyballTeam.length; i++) {
+    // Print each player's details
     console.log("Name: " + volleyballTeam[i].name);
     console.log("Position: " + volleyballTeam[i].position);
     console.log("Jersey Number: " + volleyballTeam[i].jerseyNumber);
@@ -20,13 +41,22 @@ function listPlayers() {
   }
 }
 
+// Step 4: Print the total number of players we have added to the console
 function getTotalPlayers() {
+  // Return the length of the volleyballTeam array
   return volleyballTeam.length;
 }
 
+// Example usage:
+
+// Adding some players
 mintPlayer("Yuji Nishida", "Outside Hitter", 11, "6'1\"");
 mintPlayer("Jenia Grebennikov", "Libero", 8, "6'2\"");
 mintPlayer("Svetoslav Gotsev", "Middle Blocker", 5, "6'9\"");
 mintPlayer("Bruno Mossa de Rezende", "Setter", 1, "6'3\"");
+
+// Listing all players
 listPlayers();
+
+// Printing the total number of players
 console.log("Total players: " + getTotalPlayers());
